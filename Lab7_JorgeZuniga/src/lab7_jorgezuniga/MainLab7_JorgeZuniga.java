@@ -5,6 +5,7 @@
  */
 package lab7_jorgezuniga;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
 
@@ -30,7 +31,30 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        CrearUsuarios = new javax.swing.JDialog();
+        CrearCompilador = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        GuardarCompiladoress = new javax.swing.JButton();
+        SalirCrearCompiladores = new javax.swing.JButton();
+        NombreAddCompilador = new javax.swing.JTextField();
+        LineasLexico = new javax.swing.JTextField();
+        LineasSemantico = new javax.swing.JTextField();
+        LineasSintactico = new javax.swing.JTextField();
+        Generador = new javax.swing.JTextField();
+        Optimizacion = new javax.swing.JTextField();
+        Intermedio = new javax.swing.JTextField();
+        NombreCreadorAddCompilador = new javax.swing.JTextField();
+        MenuUsuarios = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        login = new javax.swing.JButton();
+        Sigin = new javax.swing.JButton();
+        Sig = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -42,11 +66,199 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         ContraAddAlumno = new javax.swing.JTextField();
         GuardarAddAlumno = new javax.swing.JButton();
         SalirCrearAlumno = new javax.swing.JButton();
-        CrearCompilador = new javax.swing.JDialog();
+        Log = new javax.swing.JDialog();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        UsuarioLog = new javax.swing.JTextField();
+        ContraLog = new javax.swing.JTextField();
+        Entrar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        LogSuperUsuario = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        SuperContra = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        SuperUsuario = new javax.swing.JTextField();
+        EntrarCompilaciones = new javax.swing.JButton();
+        SalirLogSuper = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        Compilar = new javax.swing.JDialog();
+        jPanel5 = new javax.swing.JPanel();
+        ListaAlumnos = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Tabla2 = new javax.swing.JTable();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jProgressBar2 = new javax.swing.JProgressBar();
+        ComilarPrograma = new javax.swing.JButton();
+        SalidaCompilar = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        CrearCompiladores = new javax.swing.JButton();
-        CrearUsuariosAlumnos = new javax.swing.JButton();
-        Compilar = new javax.swing.JButton();
+        MenuSuperUsuario = new javax.swing.JButton();
+        Usuarios = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+
+        jLabel6.setText("Alumno");
+
+        jLabel7.setText("Nombre del compilador");
+
+        jLabel8.setText("Analisis Lexico");
+
+        jLabel9.setText("Analisis Sintactico");
+
+        jLabel10.setText("Analisis Semantico");
+
+        jLabel11.setText("Generacion de Codigo Intermedio");
+
+        jLabel12.setText("Optimizacion Codigo");
+
+        jLabel13.setText("Generador Codigo");
+
+        GuardarCompiladoress.setText("Guardar");
+        GuardarCompiladoress.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GuardarCompiladoressMouseClicked(evt);
+            }
+        });
+
+        SalirCrearCompiladores.setText("Salir");
+        SalirCrearCompiladores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirCrearCompiladoresMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CrearCompiladorLayout = new javax.swing.GroupLayout(CrearCompilador.getContentPane());
+        CrearCompilador.getContentPane().setLayout(CrearCompiladorLayout);
+        CrearCompiladorLayout.setHorizontalGroup(
+            CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearCompiladorLayout.createSequentialGroup()
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CrearCompiladorLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)))
+                    .addGroup(CrearCompiladorLayout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(GuardarCompiladoress)))
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CrearCompiladorLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SalirCrearCompiladores)
+                        .addGap(55, 55, 55))
+                    .addGroup(CrearCompiladorLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Generador, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Intermedio)
+                            .addComponent(Optimizacion, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(NombreAddCompilador, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LineasLexico, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LineasSemantico, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(CrearCompiladorLayout.createSequentialGroup()
+                                .addComponent(LineasSintactico, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(NombreCreadorAddCompilador))
+                        .addGap(18, 18, 18))))
+        );
+        CrearCompiladorLayout.setVerticalGroup(
+            CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearCompiladorLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(NombreCreadorAddCompilador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(NombreAddCompilador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(LineasLexico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(LineasSintactico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(LineasSemantico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(Intermedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(Optimizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(Generador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GuardarCompiladoress)
+                    .addComponent(SalirCrearCompiladores))
+                .addContainerGap())
+        );
+
+        login.setText("Log In");
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginMouseClicked(evt);
+            }
+        });
+
+        Sigin.setText("Sig In");
+        Sigin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SiginMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Sigin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(Sigin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(96, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout MenuUsuariosLayout = new javax.swing.GroupLayout(MenuUsuarios.getContentPane());
+        MenuUsuarios.getContentPane().setLayout(MenuUsuariosLayout);
+        MenuUsuariosLayout.setHorizontalGroup(
+            MenuUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        MenuUsuariosLayout.setVerticalGroup(
+            MenuUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         jLabel1.setText("Nombre");
 
@@ -73,118 +285,381 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout CrearUsuariosLayout = new javax.swing.GroupLayout(CrearUsuarios.getContentPane());
-        CrearUsuarios.getContentPane().setLayout(CrearUsuariosLayout);
-        CrearUsuariosLayout.setHorizontalGroup(
-            CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CrearUsuariosLayout.createSequentialGroup()
+        javax.swing.GroupLayout SigLayout = new javax.swing.GroupLayout(Sig.getContentPane());
+        Sig.getContentPane().setLayout(SigLayout);
+        SigLayout.setHorizontalGroup(
+            SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SigLayout.createSequentialGroup()
                 .addGap(129, 129, 129)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(CrearUsuariosLayout.createSequentialGroup()
+                .addContainerGap(144, Short.MAX_VALUE))
+            .addGroup(SigLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuariosLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                .addGroup(SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SigLayout.createSequentialGroup()
+                        .addGroup(SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SigLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(UsuarioAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SigLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ApellidoAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SigLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(111, 111, 111)
+                                .addComponent(NombreAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SigLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ContraAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(SigLayout.createSequentialGroup()
+                        .addComponent(GuardarAddAlumno)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(UsuarioAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuariosLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ApellidoAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuariosLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(111, 111, 111)
-                        .addComponent(NombreAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuariosLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(GuardarAddAlumno)
-                            .addComponent(ContraAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                .addComponent(SalirCrearAlumno)
-                .addGap(36, 36, 36))
+                        .addComponent(SalirCrearAlumno)
+                        .addGap(53, 53, 53))))
         );
-        CrearUsuariosLayout.setVerticalGroup(
-            CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuariosLayout.createSequentialGroup()
+        SigLayout.setVerticalGroup(
+            SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SigLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(NombreAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(ApellidoAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(UsuarioAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(ContraAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75)
-                .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(SigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GuardarAddAlumno)
                     .addComponent(SalirCrearAlumno))
                 .addGap(47, 47, 47))
         );
 
-        javax.swing.GroupLayout CrearCompiladorLayout = new javax.swing.GroupLayout(CrearCompilador.getContentPane());
-        CrearCompilador.getContentPane().setLayout(CrearCompiladorLayout);
-        CrearCompiladorLayout.setHorizontalGroup(
-            CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jLabel14.setText("Usuario");
+
+        jLabel15.setText("Contrasena");
+
+        Entrar.setText("Entrar");
+        Entrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EntrarMouseClicked(evt);
+            }
+        });
+
+        jButton2.setText("Salir");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
+        jLabel16.setText("Entrar");
+
+        javax.swing.GroupLayout LogLayout = new javax.swing.GroupLayout(Log.getContentPane());
+        Log.getContentPane().setLayout(LogLayout);
+        LogLayout.setHorizontalGroup(
+            LogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LogLayout.createSequentialGroup()
+                .addGroup(LogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LogLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addGroup(LogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(LogLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(UsuarioLog, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LogLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ContraLog, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LogLayout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(Entrar)
+                                .addGap(98, 98, 98)
+                                .addComponent(jButton2))))
+                    .addGroup(LogLayout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
-        CrearCompiladorLayout.setVerticalGroup(
-            CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        LogLayout.setVerticalGroup(
+            LogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LogLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(LogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UsuarioLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(LogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(ContraLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(LogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Entrar)
+                    .addComponent(jButton2))
+                .addGap(65, 65, 65))
+        );
+
+        jLabel17.setText("Contrasena");
+
+        jLabel18.setText("Usuario");
+
+        EntrarCompilaciones.setText("Entrar");
+        EntrarCompilaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EntrarCompilacionesMouseClicked(evt);
+            }
+        });
+
+        SalirLogSuper.setText("Salir");
+        SalirLogSuper.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirLogSuperMouseClicked(evt);
+            }
+        });
+
+        jLabel19.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
+        jLabel19.setText("Entrar Super Usuario");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel19)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SuperUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel17)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SuperContra, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addComponent(EntrarCompilaciones)
+                            .addGap(98, 98, 98)
+                            .addComponent(SalirLogSuper))))
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel19)
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SuperUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(SuperContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EntrarCompilaciones)
+                    .addComponent(SalirLogSuper))
+                .addGap(80, 80, 80))
+        );
+
+        javax.swing.GroupLayout LogSuperUsuarioLayout = new javax.swing.GroupLayout(LogSuperUsuario.getContentPane());
+        LogSuperUsuario.getContentPane().setLayout(LogSuperUsuarioLayout);
+        LogSuperUsuarioLayout.setHorizontalGroup(
+            LogSuperUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        LogSuperUsuarioLayout.setVerticalGroup(
+            LogSuperUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel21.setText("Alumno");
+
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tabla1);
+
+        Tabla2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(Tabla2);
+
+        ComilarPrograma.setText("Compilar");
+        ComilarPrograma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ComilarProgramaMouseClicked(evt);
+            }
+        });
+
+        SalidaCompilar.setText("Salida");
+        SalidaCompilar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalidaCompilarMouseClicked(evt);
+            }
+        });
+
+        jLabel22.setText("Fase Analisis");
+
+        jLabel23.setText("Fase Sintesis");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ListaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap(65, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jProgressBar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(34, 34, 34))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel23)
+                                .addGap(103, 103, 103))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addGap(102, 102, 102)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(63, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(ComilarPrograma)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SalidaCompilar)
+                .addGap(107, 107, 107))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ListaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(18, 18, 18)
+                        .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComilarPrograma)
+                    .addComponent(SalidaCompilar))
+                .addGap(21, 21, 21))
+        );
+
+        javax.swing.GroupLayout CompilarLayout = new javax.swing.GroupLayout(Compilar.getContentPane());
+        Compilar.getContentPane().setLayout(CompilarLayout);
+        CompilarLayout.setHorizontalGroup(
+            CompilarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CompilarLayout.setVerticalGroup(
+            CompilarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        CrearCompiladores.setText("Crear Compiladores");
-        CrearCompiladores.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuSuperUsuario.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        MenuSuperUsuario.setText("Super Usuario");
+        MenuSuperUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CrearCompiladoresMouseClicked(evt);
+                MenuSuperUsuarioMouseClicked(evt);
             }
         });
 
-        CrearUsuariosAlumnos.setText("Crear Usuarios Alumnos");
-        CrearUsuariosAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
+        Usuarios.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Usuarios.setText("Usuarios");
+        Usuarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CrearUsuariosAlumnosMouseClicked(evt);
+                UsuariosMouseClicked(evt);
             }
         });
 
-        Compilar.setText("Compilar");
+        jLabel20.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
+        jLabel20.setText("MENU");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(247, 247, 247)
+                .addGap(222, 222, 222)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(Compilar)
-                    .addComponent(CrearUsuariosAlumnos)
-                    .addComponent(CrearCompiladores))
-                .addContainerGap(251, Short.MAX_VALUE))
+                    .addComponent(jLabel20)
+                    .addComponent(Usuarios)
+                    .addComponent(MenuSuperUsuario))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(CrearCompiladores)
-                .addGap(75, 75, 75)
-                .addComponent(CrearUsuariosAlumnos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(Compilar)
-                .addGap(101, 101, 101))
+                .addGap(42, 42, 42)
+                .addComponent(jLabel20)
+                .addGap(62, 62, 62)
+                .addComponent(Usuarios)
+                .addGap(120, 120, 120)
+                .addComponent(MenuSuperUsuario)
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -250,44 +725,219 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_GuardarAddAlumnoMouseClicked
 
-    private void CrearUsuariosAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearUsuariosAlumnosMouseClicked
-        // TODO add your handling code here:
-        try {
-            CrearUsuarios.pack();
-            CrearUsuarios.setLocationRelativeTo(null);
-            CrearUsuarios.setVisible(true);
-        } catch (Exception e) {
-
-        }
-    }//GEN-LAST:event_CrearUsuariosAlumnosMouseClicked
-
     private void SalirCrearAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirCrearAlumnoMouseClicked
         // TODO add your handling code here:
         try {
-            this.pack();
-            this.setLocationRelativeTo(null);
-            this.setVisible(true);
-            CrearUsuarios.setVisible(false);
+            MenuUsuarios.pack();
+            MenuUsuarios.setLocationRelativeTo(null);
+            MenuUsuarios.setVisible(true);
+            Sig.setVisible(false);
         } catch (Exception e) {
         }
     }//GEN-LAST:event_SalirCrearAlumnoMouseClicked
 
-    private void CrearCompiladoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCompiladoresMouseClicked
+    private void SalirCrearCompiladoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirCrearCompiladoresMouseClicked
         // TODO add your handling code here:
         try {
-            AdministrarUsuarios ap = new AdministrarUsuarios("./UsuariosA.jz");
+            this.setLocationRelativeTo(null);
+            this.pack();
+            this.setVisible(true);
+            CrearCompilador.setVisible(false);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_SalirCrearCompiladoresMouseClicked
+
+    private void GuardarCompiladoressMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarCompiladoressMouseClicked
+        // TODO add your handling code here:
+        try {
+
+            String nombreCompilador, nombreCreador;
+            int lexico, sintactico, semantico, intermedio, optimizador, generador;
+            nombreCompilador = NombreAddCompilador.getText();
+            nombreCreador = NombreCreadorAddCompilador.getText();
+            lexico = Integer.parseInt(LineasLexico.getText());
+            sintactico = Integer.parseInt(LineasSintactico.getText());
+            semantico = Integer.parseInt(LineasSemantico.getText());
+
+            intermedio = Integer.parseInt(Intermedio.getText());
+            optimizador = Integer.parseInt(Optimizacion.getText());
+            generador = Integer.parseInt(Generador.getText());
+
+            Compiladores p = new Compiladores(nombreCompilador, nombreCreador, lexico, sintactico, semantico, intermedio, optimizador, generador);
+            AministrarCompiladores ap = new AministrarCompiladores("./Compiladores.jz");
             ap.cargarArchivo();
-            if (ap.getListaUsuariosAlumnos().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "No se pueden crear compiladores sin tener Alumnos!!");
-            } else {
-                CrearCompilador.pack();
-                CrearCompilador.setLocationRelativeTo(null);
-                CrearCompilador.setVisible(true);
-            }
+            ap.setCompiladores(p);
+            ap.escribirArchivo();
+            JOptionPane.showMessageDialog(this, "Compiladore guardado exitosamente");
+            NombreAddCompilador.setText("");
+            LineasLexico.setText("");
+            LineasSintactico.setText("");
+            LineasSemantico.setText("");
+            Intermedio.setText("");
+            Optimizacion.setText("");
+            Generador.setText("");
+
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_GuardarCompiladoressMouseClicked
+
+    private void SiginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SiginMouseClicked
+        // TODO add your handling code here:
+        try {
+            Sig.setLocationRelativeTo(null);
+            Sig.pack();
+            Sig.setVisible(true);
+            MenuUsuarios.setVisible(false);
         } catch (Exception e) {
 
         }
-    }//GEN-LAST:event_CrearCompiladoresMouseClicked
+    }//GEN-LAST:event_SiginMouseClicked
+
+    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
+        // TODO add your handling code here:
+        try {
+            Log.setLocationRelativeTo(null);
+            Log.pack();
+            Log.setVisible(true);
+            MenuUsuarios.setVisible(false);
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_loginMouseClicked
+
+    private void UsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuariosMouseClicked
+        // TODO add your handling code here:
+        try {
+            MenuUsuarios.setLocationRelativeTo(null);
+            MenuUsuarios.pack();
+            MenuUsuarios.setVisible(true);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_UsuariosMouseClicked
+
+    private void EntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarMouseClicked
+        // TODO add your handling code here:
+        String nombreAlumno;
+        try {
+            AdministrarUsuarios ap = new AdministrarUsuarios("./UsuariosA.jz");
+            ap.cargarArchivo();
+            boolean entro = true;
+            for (int i = 0; i <= ap.getListaUsuariosAlumnos().size() - 1; i++) {
+                if (UsuarioLog.getText().equals(ap.getListaUsuariosAlumnos().get(i).getUsuario())
+                        && ContraLog.getText().equals(ap.getListaUsuariosAlumnos().get(i).getContrasena())) {
+
+                    CrearCompilador.pack();
+                    CrearCompilador.setLocationRelativeTo(null);
+                    CrearCompilador.setVisible(true);
+                    Log.setVisible(false);
+
+                    UsuarioLog.setText("");
+                    ContraLog.setText("");
+                    nombreAlumno = ap.getListaUsuariosAlumnos().get(i).getNombre();
+                    NombreCreadorAddCompilador.setText(nombreAlumno);
+                    entro = true;
+                    break;
+                } else {
+                    entro = false;
+                }
+            }
+            if (entro == false) {
+                JOptionPane.showMessageDialog(null, "Contrasena o usuario incorrecto!!");
+            }
+            UsuarioLog.setText("");
+            ContraLog.setText("");
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_EntrarMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        try {
+            MenuUsuarios.setLocationRelativeTo(null);
+            MenuUsuarios.pack();
+            MenuUsuarios.setVisible(true);
+            Log.setVisible(false);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void EntrarCompilacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarCompilacionesMouseClicked
+        // TODO add your handling code here:
+        try {
+            AdministrarSuper ap = new AdministrarSuper("./SuperU.jz");
+            ap.cargarArchivo();
+            boolean entro = true;
+            for (int i = 0; i <= ap.getListaSuperUsuario().size() - 1; i++) {
+                if (SuperUsuario.getText().equals(ap.getListaSuperUsuario().get(i).getUsuario())
+                        && SuperContra.getText().equals(ap.getListaSuperUsuario().get(i).getContrasena())) {
+
+                    Compilar.pack();
+                    Compilar.setLocationRelativeTo(null);
+                    Compilar.setVisible(true);
+                    LogSuperUsuario.setVisible(false);
+
+                    SuperUsuario.setText("");
+                    SuperContra.setText("");
+
+                    AministrarCompiladores ap1 = new AministrarCompiladores("./Compiladores.jz");
+                    ap1.cargarArchivo();
+                    DefaultComboBoxModel modelo = new DefaultComboBoxModel(ap1.getListaCompiladores().toArray());
+                    ListaAlumnos.setModel(modelo);
+
+                    entro = true;
+                    break;
+                } else {
+                    entro = false;
+                }
+            }
+            if (entro == false) {
+                JOptionPane.showMessageDialog(null, "Contrasena o usuario incorrecto!!");
+            }
+            UsuarioLog.setText("");
+            ContraLog.setText("");
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_EntrarCompilacionesMouseClicked
+
+    private void SalirLogSuperMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirLogSuperMouseClicked
+        // TODO add your handling code here:
+        try {
+            LogSuperUsuario.setVisible(false);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_SalirLogSuperMouseClicked
+
+    private void MenuSuperUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuSuperUsuarioMouseClicked
+        // TODO add your handling code here:
+        try {
+            LogSuperUsuario.setLocationRelativeTo(null);
+            LogSuperUsuario.pack();
+            LogSuperUsuario.setVisible(true);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_MenuSuperUsuarioMouseClicked
+
+    private void SalidaCompilarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalidaCompilarMouseClicked
+        // TODO add your handling code here:
+        try {
+            this.setLocationRelativeTo(null);
+            this.pack();
+            this.setVisible(true);
+            Compilar.setVisible(false);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_SalidaCompilarMouseClicked
+
+    private void ComilarProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComilarProgramaMouseClicked
+        // TODO add your handling code here:
+        try {
+            this.setLocationRelativeTo(null);
+            this.pack();
+            this.setVisible(true);
+            Compilar.setVisible(false);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_ComilarProgramaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -326,21 +976,74 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ApellidoAddAlumno;
-    private javax.swing.JButton Compilar;
+    private javax.swing.JButton ComilarPrograma;
+    private javax.swing.JDialog Compilar;
     private javax.swing.JTextField ContraAddAlumno;
+    private javax.swing.JTextField ContraLog;
     private javax.swing.JDialog CrearCompilador;
-    private javax.swing.JButton CrearCompiladores;
-    private javax.swing.JDialog CrearUsuarios;
-    private javax.swing.JButton CrearUsuariosAlumnos;
+    private javax.swing.JButton Entrar;
+    private javax.swing.JButton EntrarCompilaciones;
+    private javax.swing.JTextField Generador;
     private javax.swing.JButton GuardarAddAlumno;
+    private javax.swing.JButton GuardarCompiladoress;
+    private javax.swing.JTextField Intermedio;
+    private javax.swing.JTextField LineasLexico;
+    private javax.swing.JTextField LineasSemantico;
+    private javax.swing.JTextField LineasSintactico;
+    private javax.swing.JComboBox<String> ListaAlumnos;
+    private javax.swing.JDialog Log;
+    private javax.swing.JDialog LogSuperUsuario;
+    private javax.swing.JButton MenuSuperUsuario;
+    private javax.swing.JDialog MenuUsuarios;
     private javax.swing.JTextField NombreAddAlumno;
+    private javax.swing.JTextField NombreAddCompilador;
+    private javax.swing.JTextField NombreCreadorAddCompilador;
+    private javax.swing.JTextField Optimizacion;
+    private javax.swing.JButton SalidaCompilar;
     private javax.swing.JButton SalirCrearAlumno;
+    private javax.swing.JButton SalirCrearCompiladores;
+    private javax.swing.JButton SalirLogSuper;
+    private javax.swing.JDialog Sig;
+    private javax.swing.JButton Sigin;
+    private javax.swing.JTextField SuperContra;
+    private javax.swing.JTextField SuperUsuario;
+    private javax.swing.JTable Tabla2;
     private javax.swing.JTextField UsuarioAddAlumno;
+    private javax.swing.JTextField UsuarioLog;
+    private javax.swing.JButton Usuarios;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton login;
+    private javax.swing.JTable tabla1;
     // End of variables declaration//GEN-END:variables
 }
