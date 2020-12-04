@@ -17,20 +17,20 @@ import java.util.ArrayList;
  *
  * @author Alejandro
  */
-public class AdministrarUsuarios {
-    private ArrayList<UsuariosAlumnos> ListaUsuarios = new ArrayList();
+public class AministrarCompiladores {
+    private ArrayList<Compiladores> ListaCompiladores = new ArrayList();
     private File archivo = null;
     
-    public AdministrarUsuarios(String path) {
+    public AministrarCompiladores(String path) {
         archivo = new File(path);
     }
 
-    public ArrayList<UsuariosAlumnos> getListaUsuariosAlumnos() {
-        return ListaUsuarios;
+    public ArrayList<Compiladores> getListaCompiladores() {
+        return ListaCompiladores;
     }
 
-    public void setListaUsuariosAlumnos(ArrayList<UsuariosAlumnos> ListaUsuariosAlumnos) {
-        this.ListaUsuarios = ListaUsuariosAlumnos;
+    public void setListaCompiladores(ArrayList<Compiladores> ListaCompiladores) {
+        this.ListaCompiladores = ListaCompiladores;
     }
 
     public File getArchivo() {
@@ -41,21 +41,21 @@ public class AdministrarUsuarios {
         this.archivo = archivo;
     }
     
-    public void setUsuarioAlumno(UsuariosAlumnos a){
-        ListaUsuarios.add(a);
+    public void setCompiladores(Compiladores a){
+        ListaCompiladores.add(a);
     }
     
     
     public void cargarArchivo() {
         try {            
-            ListaUsuarios = new ArrayList();
-            UsuariosAlumnos temp;
+            ListaCompiladores = new ArrayList();
+            Compiladores temp;
             if (archivo.exists()) {
                 FileInputStream entrada= new FileInputStream(archivo);
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (UsuariosAlumnos) objeto.readObject()) != null) {
-                        ListaUsuarios.add(temp);
+                    while ((temp = (Compiladores) objeto.readObject()) != null) {
+                        ListaCompiladores.add(temp);
                     }
                 } catch (EOFException e) {
                     //encontro el final del archivo
@@ -74,7 +74,7 @@ public class AdministrarUsuarios {
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            for (UsuariosAlumnos t : ListaUsuarios) {
+            for (Compiladores t : ListaCompiladores) {
                 bw.writeObject(t);
             }
             bw.flush();

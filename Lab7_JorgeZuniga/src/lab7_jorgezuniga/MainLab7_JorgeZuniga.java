@@ -42,6 +42,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         ContraAddAlumno = new javax.swing.JTextField();
         GuardarAddAlumno = new javax.swing.JButton();
         SalirCrearAlumno = new javax.swing.JButton();
+        CrearCompilador = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         CrearCompiladores = new javax.swing.JButton();
         CrearUsuariosAlumnos = new javax.swing.JButton();
@@ -66,6 +67,11 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         });
 
         SalirCrearAlumno.setText("Salir");
+        SalirCrearAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirCrearAlumnoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CrearUsuariosLayout = new javax.swing.GroupLayout(CrearUsuarios.getContentPane());
         CrearUsuarios.getContentPane().setLayout(CrearUsuariosLayout);
@@ -96,9 +102,9 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                         .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(GuardarAddAlumno)
                             .addComponent(ContraAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(SalirCrearAlumno)
-                .addGap(34, 34, 34))
+                .addGap(36, 36, 36))
         );
         CrearUsuariosLayout.setVerticalGroup(
             CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,22 +127,39 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                 .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(ContraAddAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CrearUsuariosLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(GuardarAddAlumno)
-                        .addGap(47, 47, 47))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuariosLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SalirCrearAlumno)
-                        .addGap(31, 31, 31))))
+                .addGap(75, 75, 75)
+                .addGroup(CrearUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GuardarAddAlumno)
+                    .addComponent(SalirCrearAlumno))
+                .addGap(47, 47, 47))
+        );
+
+        javax.swing.GroupLayout CrearCompiladorLayout = new javax.swing.GroupLayout(CrearCompilador.getContentPane());
+        CrearCompilador.getContentPane().setLayout(CrearCompiladorLayout);
+        CrearCompiladorLayout.setHorizontalGroup(
+            CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        CrearCompiladorLayout.setVerticalGroup(
+            CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         CrearCompiladores.setText("Crear Compiladores");
+        CrearCompiladores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearCompiladoresMouseClicked(evt);
+            }
+        });
 
         CrearUsuariosAlumnos.setText("Crear Usuarios Alumnos");
+        CrearUsuariosAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearUsuariosAlumnosMouseClicked(evt);
+            }
+        });
 
         Compilar.setText("Compilar");
 
@@ -181,37 +204,90 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private void GuardarAddAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarAddAlumnoMouseClicked
         // TODO add your handling code here:
         try {
+            boolean entra = true;
             if (NombreAddAlumno.getText() == null || ApellidoAddAlumno.getText() == null
-                    || UsuarioAddAlumno.getText() == null || ContraAddAlumno.getText()== null) {
-                JOptionPane.showMessageDialog(null, "No se puede crear pelicula por que hay campos vacios");
-            } else {
-                String nombre, apellido, usuario, contra;
-                
-                nombre = NombreAddAlumno.getText();
-                apellido = ApellidoAddAlumno.getText();
-                usuario = UsuarioAddAlumno.getText();
-                contra = ContraAddAlumno.getText();
+                    || UsuarioAddAlumno.getText() == null || ContraAddAlumno.getText() == null) {
+                entra = false;
+                JOptionPane.showMessageDialog(null, "No se puede crear usuario por que hay campos vacios");
+            }
+            if (entra) {
 
-                UsuariosAlumnos p = new UsuariosAlumnos(nombre, apellido, usuario, contra);
-                AdministrarUsuarios ap = new AdministrarUsuarios("./UsuariosA.jz");
-                ap.cargarArchivo();
-                ap.setUsuarioAlumno(p);
-                ap.escribirArchivo();
-                JOptionPane.showMessageDialog(this, "Usuario guardado exitosamente");
-                NombreAddAlumno.setText("");
-                ApellidoAddAlumno.setText("");
-                UsuarioAddAlumno.setText("");
-                ContraAddAlumno.setText("");
+                AdministrarUsuarios ap1 = new AdministrarUsuarios("./UsuariosA.jz");
+                ap1.cargarArchivo();
+                boolean entra1 = true;
+                for (int i = 0; i <= ap1.getListaUsuariosAlumnos().size() - 1; i++) {
+                    if ((UsuarioAddAlumno.getText().equals(ap1.getListaUsuariosAlumnos().get(i).getUsuario()))) {
+                        JOptionPane.showMessageDialog(null, "Usuario ya existente!!");
+                        entra1 = false;
+                        break;
+                    } else if ((ContraAddAlumno.getText().equals((ap1.getListaUsuariosAlumnos().get(i).getContrasena())))) {
+                        JOptionPane.showMessageDialog(null, "Contrasena ya existente!!");
+                        entra1 = false;
+                        break;
+                    }
+                }
+                if (entra1) {
+                    String nombre, apellido, usuario, contra;
+                    nombre = NombreAddAlumno.getText();
+                    apellido = ApellidoAddAlumno.getText();
+                    usuario = UsuarioAddAlumno.getText();
+                    contra = ContraAddAlumno.getText();
+
+                    UsuariosAlumnos p = new UsuariosAlumnos(nombre, apellido, usuario, contra);
+                    AdministrarUsuarios ap = new AdministrarUsuarios("./UsuariosA.jz");
+                    ap.cargarArchivo();
+                    ap.setUsuarioAlumno(p);
+                    ap.escribirArchivo();
+                    JOptionPane.showMessageDialog(this, "Usuario guardado exitosamente");
+                    NombreAddAlumno.setText("");
+                    ApellidoAddAlumno.setText("");
+                    UsuarioAddAlumno.setText("");
+                    ContraAddAlumno.setText("");
+                }
 
             }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_GuardarAddAlumnoMouseClicked
 
+    private void CrearUsuariosAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearUsuariosAlumnosMouseClicked
+        // TODO add your handling code here:
+        try {
+            CrearUsuarios.pack();
+            CrearUsuarios.setLocationRelativeTo(null);
+            CrearUsuarios.setVisible(true);
         } catch (Exception e) {
 
         }
-        
-        
-        
-    }//GEN-LAST:event_GuardarAddAlumnoMouseClicked
+    }//GEN-LAST:event_CrearUsuariosAlumnosMouseClicked
+
+    private void SalirCrearAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirCrearAlumnoMouseClicked
+        // TODO add your handling code here:
+        try {
+            this.pack();
+            this.setLocationRelativeTo(null);
+            this.setVisible(true);
+            CrearUsuarios.setVisible(false);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_SalirCrearAlumnoMouseClicked
+
+    private void CrearCompiladoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCompiladoresMouseClicked
+        // TODO add your handling code here:
+        try {
+            AdministrarUsuarios ap = new AdministrarUsuarios("./UsuariosA.jz");
+            ap.cargarArchivo();
+            if (ap.getListaUsuariosAlumnos().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No se pueden crear compiladores sin tener Alumnos!!");
+            } else {
+                CrearCompilador.pack();
+                CrearCompilador.setLocationRelativeTo(null);
+                CrearCompilador.setVisible(true);
+            }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_CrearCompiladoresMouseClicked
 
     /**
      * @param args the command line arguments
@@ -252,6 +328,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private javax.swing.JTextField ApellidoAddAlumno;
     private javax.swing.JButton Compilar;
     private javax.swing.JTextField ContraAddAlumno;
+    private javax.swing.JDialog CrearCompilador;
     private javax.swing.JButton CrearCompiladores;
     private javax.swing.JDialog CrearUsuarios;
     private javax.swing.JButton CrearUsuariosAlumnos;
