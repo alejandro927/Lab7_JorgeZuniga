@@ -99,6 +99,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         SalidaCompilar = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        Eliminar = new javax.swing.JButton();
         OpcionesUsuario = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -561,6 +562,13 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
 
         jLabel23.setText("Fase Sintesis");
 
+        Eliminar.setText("Eliminar");
+        Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EliminarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -568,29 +576,34 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel21)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ListaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ListaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(131, 131, 131)
+                                .addComponent(jLabel22))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(P2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(P1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(136, 136, 136)
+                                .addComponent(jLabel23)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(ComilarPrograma))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(jLabel22))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(P2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(P1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jLabel23)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addComponent(ComilarPrograma)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Eliminar)
+                        .addGap(114, 114, 114)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SalidaCompilar)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(102, 102, 102))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -613,7 +626,8 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SalidaCompilar)
-                    .addComponent(ComilarPrograma))
+                    .addComponent(ComilarPrograma)
+                    .addComponent(Eliminar))
                 .addContainerGap())
         );
 
@@ -999,6 +1013,24 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private void ComilarProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComilarProgramaMouseClicked
         // TODO add your handling code here:
         try {
+            tablaErrores.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Errores"}
+            ) {
+                Class[] types = new Class[]{
+                    java.lang.String.class, java.lang.String.class
+                };
+                boolean[] canEdit = new boolean[]{
+                    false, false
+                };
+
+                public Class getColumnClass(int columnIndex) {
+                    return types[columnIndex];
+                }
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit[columnIndex];
+                }
+            });
+
             String nombre = ListaAlumnos.getSelectedItem().toString();
             P1.setValue(0);
             P2.setValue(0);
@@ -1013,23 +1045,30 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             this.P1.setMaximum(10);
             HiloFaseAnalisis H1 = new HiloFaseAnalisis(nombre, this.P1, true, Analisis1, Analisis2, Analisis3, this.tablaErrores);
             H1.start();
+            int puntos1 = H1.getFPuntos();
+            int puntos2 = 0;
 
-            if (P1.getValue()==P1.getMaximum()) {
-                String nombre1 = ListaAlumnos.getSelectedItem().toString();
-                AministrarCompiladores ap1 = new AministrarCompiladores("./Compiladores.jz");
-                ap1.cargarArchivo();
-                int Analisis4;
-                int Analisis5;
-                int Analisis6;
-                Analisis4 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getIntermedio();
-                Analisis5 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getOptimizador();
-                Analisis6 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getGenerador();
-                this.P2.setMaximum(10);
-                HiloFaseAnalisis H2 = new HiloFaseAnalisis(nombre1, this.P2, true, Analisis4, Analisis5, Analisis6, this.tablaErrores);
-                H2.start();
+            String nombre1 = ListaAlumnos.getSelectedItem().toString();
+            AministrarCompiladores ap1 = new AministrarCompiladores("./Compiladores.jz");
+            ap1.cargarArchivo();
+            int Analisis4;
+            int Analisis5;
+            int Analisis6;
+            Analisis4 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getIntermedio();
+            Analisis5 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getOptimizador();
+            Analisis6 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getGenerador();
+            this.P2.setMaximum(10);
+            HiloFaseAnalisis H2 = new HiloFaseAnalisis(nombre1, this.P2, true, Analisis4, Analisis5, Analisis6, this.tablaErrores);
+            H2.start();
+            puntos2 = H2.getFPuntos();
 
+            int puntosF = puntos1 + puntos2;
+            AdministrarUsuarios ua = new AdministrarUsuarios("./UsuariosA.jz");
+            for (int i = 0; i < ua.getListaUsuariosAlumnos().size(); i++) {
+                if (ua.getListaUsuariosAlumnos().get(i).getNombre().equals(nombre)) {
+                    ua.getListaUsuariosAlumnos().get(i).setNota(puntosF);
+                }
             }
-
         } catch (Exception e) {
         }
     }//GEN-LAST:event_ComilarProgramaMouseClicked
@@ -1059,6 +1098,18 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void EliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarMouseClicked
+        // TODO add your handling code here:
+        try {
+            AministrarCompiladores ap1 = new AministrarCompiladores("./Compiladores.jz");
+            ap1.cargarArchivo();
+            ap1.getListaCompiladores().remove(ListaAlumnos.getSelectedIndex());
+            JOptionPane.showMessageDialog(null, "Eliminado exitosamente!!");
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_EliminarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1102,6 +1153,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private javax.swing.JTextField ContraAddAlumno;
     private javax.swing.JTextField ContraLog;
     private javax.swing.JDialog CrearCompilador;
+    private javax.swing.JButton Eliminar;
     private javax.swing.JButton Entrar;
     private javax.swing.JButton EntrarCompilaciones;
     private javax.swing.JTextField Generador;
