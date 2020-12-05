@@ -8,6 +8,8 @@ package lab7_jorgezuniga;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -50,6 +52,8 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         Optimizacion = new javax.swing.JTextField();
         Intermedio = new javax.swing.JTextField();
         NombreCreadorAddCompilador = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TablaSimbolos = new javax.swing.JTable();
         MenuUsuarios = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         login = new javax.swing.JButton();
@@ -88,11 +92,9 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         ListaAlumnos = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabla1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        Tabla2 = new javax.swing.JTable();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jProgressBar2 = new javax.swing.JProgressBar();
+        tablaErrores = new javax.swing.JTable();
+        P2 = new javax.swing.JProgressBar();
+        P1 = new javax.swing.JProgressBar();
         ComilarPrograma = new javax.swing.JButton();
         SalidaCompilar = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
@@ -132,6 +134,27 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             }
         });
 
+        TablaSimbolos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Simbolos", "Significado"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(TablaSimbolos);
+
         javax.swing.GroupLayout CrearCompiladorLayout = new javax.swing.GroupLayout(CrearCompilador.getContentPane());
         CrearCompilador.getContentPane().setLayout(CrearCompiladorLayout);
         CrearCompiladorLayout.setHorizontalGroup(
@@ -152,29 +175,28 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                     .addGroup(CrearCompiladorLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(GuardarCompiladoress)))
+                .addGap(27, 27, 27)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Generador, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(Optimizacion)
+                    .addComponent(Intermedio)
+                    .addComponent(LineasSemantico)
+                    .addComponent(NombreCreadorAddCompilador)
+                    .addComponent(NombreAddCompilador)
+                    .addComponent(LineasLexico)
+                    .addComponent(LineasSintactico))
+                .addGap(18, 18, 18)
                 .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CrearCompiladorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SalirCrearCompiladores)
-                        .addGap(55, 55, 55))
+                        .addGap(0, 165, Short.MAX_VALUE)
+                        .addComponent(SalirCrearCompiladores))
                     .addGroup(CrearCompiladorLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Generador, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Intermedio)
-                            .addComponent(Optimizacion, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NombreAddCompilador, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LineasLexico, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LineasSemantico, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(CrearCompiladorLayout.createSequentialGroup()
-                                .addComponent(LineasSintactico, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(NombreCreadorAddCompilador))
-                        .addGap(18, 18, 18))))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         CrearCompiladorLayout.setVerticalGroup(
             CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CrearCompiladorLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearCompiladorLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -184,22 +206,25 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(NombreAddCompilador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(LineasLexico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(LineasSintactico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(LineasSemantico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(Intermedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(CrearCompiladorLayout.createSequentialGroup()
+                        .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(LineasLexico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(LineasSintactico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(LineasSemantico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(Intermedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(Optimizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -207,7 +232,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                 .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(Generador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(CrearCompiladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GuardarCompiladoress)
                     .addComponent(SalirCrearCompiladores))
@@ -495,31 +520,32 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
 
         jLabel21.setText("Alumno");
 
-        tabla1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaErrores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Errores"
             }
-        ));
-        jScrollPane1.setViewportView(tabla1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
 
-        Tabla2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
             }
-        ));
-        jScrollPane2.setViewportView(Tabla2);
+        });
+        jScrollPane1.setViewportView(tablaErrores);
 
         ComilarPrograma.setText("Compilar");
         ComilarPrograma.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -544,39 +570,31 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ListaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(ListaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap(65, Short.MAX_VALUE)
+                        .addGap(50, 50, 50)
+                        .addComponent(ComilarPrograma))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel22))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jProgressBar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(34, 34, 34))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel23)
-                                .addGap(103, 103, 103))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addGap(102, 102, 102)))
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(63, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(ComilarPrograma)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SalidaCompilar)
-                .addGap(107, 107, 107))
+                            .addComponent(P2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(P1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(jLabel23)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SalidaCompilar)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(102, 102, 102))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -585,25 +603,22 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ListaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel22)
                         .addGap(18, 18, 18)
-                        .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
+                        .addComponent(P1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(P2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComilarPrograma)
-                    .addComponent(SalidaCompilar))
-                .addGap(21, 21, 21))
+                    .addComponent(SalidaCompilar)
+                    .addComponent(ComilarPrograma))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout CompilarLayout = new javax.swing.GroupLayout(Compilar.getContentPane());
@@ -614,7 +629,10 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         );
         CompilarLayout.setVerticalGroup(
             CompilarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(CompilarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -753,6 +771,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
 
             String nombreCompilador, nombreCreador;
             int lexico, sintactico, semantico, intermedio, optimizador, generador;
+            JTable tabla;
             nombreCompilador = NombreAddCompilador.getText();
             nombreCreador = NombreCreadorAddCompilador.getText();
             lexico = Integer.parseInt(LineasLexico.getText());
@@ -762,8 +781,8 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             intermedio = Integer.parseInt(Intermedio.getText());
             optimizador = Integer.parseInt(Optimizacion.getText());
             generador = Integer.parseInt(Generador.getText());
-
-            Compiladores p = new Compiladores(nombreCompilador, nombreCreador, lexico, sintactico, semantico, intermedio, optimizador, generador);
+            tabla = (JTable) TablaSimbolos.getCellEditor();
+            Compiladores p = new Compiladores(nombreCompilador, nombreCreador, lexico, sintactico, semantico, intermedio, optimizador, generador, tabla);
             AministrarCompiladores ap = new AministrarCompiladores("./Compiladores.jz");
             ap.cargarArchivo();
             ap.setCompiladores(p);
@@ -776,7 +795,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             Intermedio.setText("");
             Optimizacion.setText("");
             Generador.setText("");
-
+            TablaSimbolos.setToolTipText("");
         } catch (Exception e) {
         }
     }//GEN-LAST:event_GuardarCompiladoressMouseClicked
@@ -931,10 +950,42 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private void ComilarProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComilarProgramaMouseClicked
         // TODO add your handling code here:
         try {
-            this.setLocationRelativeTo(null);
-            this.pack();
-            this.setVisible(true);
-            Compilar.setVisible(false);
+            AministrarCompiladores ap = new AministrarCompiladores("./Compiladores.jz");
+            ap.cargarArchivo();
+            int Analisis1;
+            int Analisis2;
+            int Analisis3;
+            Analisis1 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getLexico();
+            Analisis2 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getSintactico();
+            Analisis3 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getSemantico();
+
+            HiloFaseAnalisis H1 = new HiloFaseAnalisis(this.P1, true, Analisis1, Analisis2, Analisis3, tablaErrores);
+            H1.start();
+
+//            if (P1.getValue() == P1.getMaximum()) {
+//                Compiladores temp = (Compiladores) ListaAlumnos.getSelectedItem();
+//                tablaErrores.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Descripcion", "U.V"
+//                }
+//                ) {
+//                    Class[] types = new Class[]{
+//                        java.lang.String.class, java.lang.String.class
+//                    };
+//                    boolean[] canEdit = new boolean[]{
+//                        false, false
+//                    };
+//
+//                    public Class getColumnClass(int columnIndex) {
+//                        return types[columnIndex];
+//                    }
+//
+//                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+//                        return canEdit[columnIndex];
+//                    }
+//                });
+////                HiloFaseSintesis H2 = new HiloFaseSintesis();
+////                H1.start();
+//            }
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_ComilarProgramaMouseClicked
@@ -999,6 +1050,8 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private javax.swing.JTextField NombreAddCompilador;
     private javax.swing.JTextField NombreCreadorAddCompilador;
     private javax.swing.JTextField Optimizacion;
+    private javax.swing.JProgressBar P1;
+    private javax.swing.JProgressBar P2;
     private javax.swing.JButton SalidaCompilar;
     private javax.swing.JButton SalirCrearAlumno;
     private javax.swing.JButton SalirCrearCompiladores;
@@ -1007,7 +1060,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private javax.swing.JButton Sigin;
     private javax.swing.JTextField SuperContra;
     private javax.swing.JTextField SuperUsuario;
-    private javax.swing.JTable Tabla2;
+    private javax.swing.JTable TablaSimbolos;
     private javax.swing.JTextField UsuarioAddAlumno;
     private javax.swing.JTextField UsuarioLog;
     private javax.swing.JButton Usuarios;
@@ -1039,11 +1092,10 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton login;
-    private javax.swing.JTable tabla1;
+    private javax.swing.JTable tablaErrores;
     // End of variables declaration//GEN-END:variables
+
 }

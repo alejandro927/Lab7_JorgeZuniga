@@ -6,6 +6,7 @@
 package lab7_jorgezuniga;
 
 import java.io.Serializable;
+import javax.swing.JTable;
 
 /**
  *
@@ -21,12 +22,14 @@ public class Compiladores implements Serializable {
     private int Intermedio;
     private int optimizador;
     private int generador;
+    private JTable Simbolos;
+    
     private static final long SerialVersionUID = 777L;
 
     public Compiladores() {
     }
 
-    public Compiladores(String nombreCompilador, String nombreCreador, int Lexico, int Sintactico, int Semantico, int Intermedio, int optimizador, int generador) {
+    public Compiladores(String nombreCompilador, String nombreCreador, int Lexico, int Sintactico, int Semantico, int Intermedio, int optimizador, int generador,JTable Simbolos) {
         this.nombreCompilador = nombreCompilador;
         this.nombreCreador = nombreCreador;
         this.Lexico = Lexico;
@@ -35,8 +38,17 @@ public class Compiladores implements Serializable {
         this.Intermedio = Intermedio;
         this.optimizador = optimizador;
         this.generador = generador;
+        this.Simbolos = Simbolos;
     }
 
+    public JTable getSimbolos() {
+        return Simbolos;
+    }
+
+    public void setSimbolos(JTable Simbolos) {
+        this.Simbolos = Simbolos;
+    }
+    
     public String getNombreCompilador() {
         return nombreCompilador;
     }
