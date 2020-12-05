@@ -93,9 +93,9 @@ public class HiloFaseAnalisis extends Thread {
         //suciedad 5: 8s 
         //suciedad 4: 6s
         //suciedad 3: 4s
-        while (ProgressBar.getValue() < ProgressBar.getMaximum()) {
+        while (ProgressBar.getValue() <= ProgressBar.getMaximum()-1) {
             if (vivo) {
-                ProgressBar.setValue(ProgressBar.getValue() + 50);
+                ProgressBar.setValue(ProgressBar.getValue() + 1);
 
                 if (lexico < 300) {
                     error = "Error en lexico";
@@ -151,7 +151,7 @@ public class HiloFaseAnalisis extends Thread {
             }
         }
         System.out.println("Fase Analisis terminada!");
-        System.out.println("Los puntos son:" + (FPuntos - 110));
+        System.out.println("Los puntos son:" + (FPuntos - 150));
         AdministrarUsuarios ua = new AdministrarUsuarios("./UsuariosA.jz");
         for (int i = 0; i < ua.getListaUsuariosAlumnos().size(); i++) {
             if (ua.getListaUsuariosAlumnos().get(i).getNombre().equals(nombre)) {

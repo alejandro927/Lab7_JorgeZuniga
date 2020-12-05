@@ -999,7 +999,9 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private void ComilarProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComilarProgramaMouseClicked
         // TODO add your handling code here:
         try {
+            String nombre = ListaAlumnos.getSelectedItem().toString();
             P1.setValue(0);
+            P2.setValue(0);
             AministrarCompiladores ap = new AministrarCompiladores("./Compiladores.jz");
             ap.cargarArchivo();
             int Analisis1;
@@ -1008,36 +1010,24 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             Analisis1 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getLexico();
             Analisis2 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getSintactico();
             Analisis3 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getSemantico();
-            this.P1.setMaximum(100*2);
-            HiloFaseAnalisis H1 = new HiloFaseAnalisis(nombre,this.P1, true, Analisis1, Analisis2, Analisis3, this.tablaErrores);
+            this.P1.setMaximum(10);
+            HiloFaseAnalisis H1 = new HiloFaseAnalisis(nombre, this.P1, true, Analisis1, Analisis2, Analisis3, this.tablaErrores);
             H1.start();
-            
-            
 
-            
+            if (P1.getValue()==P1.getMaximum()) {
+                String nombre1 = ListaAlumnos.getSelectedItem().toString();
+                AministrarCompiladores ap1 = new AministrarCompiladores("./Compiladores.jz");
+                ap1.cargarArchivo();
+                int Analisis4;
+                int Analisis5;
+                int Analisis6;
+                Analisis4 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getIntermedio();
+                Analisis5 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getOptimizador();
+                Analisis6 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getGenerador();
+                this.P2.setMaximum(10);
+                HiloFaseAnalisis H2 = new HiloFaseAnalisis(nombre1, this.P2, true, Analisis4, Analisis5, Analisis6, this.tablaErrores);
+                H2.start();
 
-            if (P1.getValue() == P1.getMaximum()) {
-                Compiladores temp = (Compiladores) ListaAlumnos.getSelectedItem();
-                tablaErrores.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Descripcion", "U.V"
-                }
-                ) {
-                    Class[] types = new Class[]{
-                        java.lang.String.class, java.lang.String.class
-                    };
-                    boolean[] canEdit = new boolean[]{
-                        false, false
-                    };
-
-                    public Class getColumnClass(int columnIndex) {
-                        return types[columnIndex];
-                    }
-
-                    public boolean isCellEditable(int rowIndex, int columnIndex) {
-                        return canEdit[columnIndex];
-                    }
-                });
-//                HiloFaseSintesis H2 = new HiloFaseSintesis();
-//                H1.start();
             }
 
         } catch (Exception e) {
@@ -1049,9 +1039,9 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         try {
             AdministrarUsuarios ap = new AdministrarUsuarios("./UsuariosA.jz");
             ap.cargarArchivo();
-            for (int i = 0; i <= ap.getListaUsuariosAlumnos().size()-1; i++) {
+            for (int i = 0; i <= ap.getListaUsuariosAlumnos().size() - 1; i++) {
                 if (ap.getListaUsuariosAlumnos().get(0).getUsuario().equals(UsuarioLLLLL.getText())) {
-                    JOptionPane.showMessageDialog(null, "Su nota es:"+ap.getListaUsuariosAlumnos().get(0).getNota());
+                    JOptionPane.showMessageDialog(null, "Su nota es:" + ap.getListaUsuariosAlumnos().get(0).getNota());
                 }
             }
         } catch (Exception e) {
@@ -1060,13 +1050,13 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        try{
-        CrearCompilador.setLocationRelativeTo(null);
-        CrearCompilador.pack();
-        CrearCompilador.setVisible(true);
-        OpcionesUsuario.setVisible(false);
-        
-        }catch(Exception e){
+        try {
+            CrearCompilador.setLocationRelativeTo(null);
+            CrearCompilador.pack();
+            CrearCompilador.setVisible(true);
+            OpcionesUsuario.setVisible(false);
+
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton1MouseClicked
 

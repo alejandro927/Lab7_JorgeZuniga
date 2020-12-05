@@ -7,61 +7,104 @@ package lab7_jorgezuniga;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JProgressBar;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Alejandro
  */
-public class HiloFaseSintesis {
+public class HiloFaseSintesis extends Thread{
     private boolean vivo;
-    private Compiladores compi;
     private JTable tabla;
-    private int Puntos;
-    private int FaltaEtapa4;
-    private int FaltaEtapa5;
-    private int FaltaEtapa6;
+    private String error;
+    private int Puntos = 0;
+    private int FPuntos;
+    private int FaltaEtapa;
+    private JProgressBar ProgressBar;
+    private int intermedio;
+    private int optimizador;
+    private int generador;
+    private String nombre;
     
-    public HiloFaseSintesis(boolean vivo, Compiladores compi, JTable tabla) {
+   public HiloFaseSintesis(String nombre,JProgressBar ProgressBar, boolean vivo, int intermedio, int optimizador, int generadoor, JTable tabla) {
+        this.ProgressBar = ProgressBar;
         this.vivo = vivo;
-        this.compi = compi;
         this.tabla = tabla;
+        this.intermedio = intermedio;
+        this.optimizador = optimizador;
+        this.generador = generador;
+        this.nombre = nombre;
     }
 
     public void run() {
-        //suciedad 5: 8s 
-        //suciedad 4: 6s
-        //suciedad 3: 4s
-        int time=2;
-        if (compi.getIntermedio()<1200) {
-            System.out.println("Error en lexico");
-            FaltaEtapa4=1200-compi.getIntermedio();
-        }else if (compi.getIntermedio()>=1200) {
-            Puntos=Puntos+10;
+        
+        while (ProgressBar.getValue() <= ProgressBar.getMaximum()-1) {
+            if (vivo) {
+                ProgressBar.setValue(ProgressBar.getValue() + 1);
+
+                if (intermedio < 1200) {
+                    error = "Error en lexico";
+                    FaltaEtapa = 1200 - intermedio;
+                    Object row[] = {error + FaltaEtapa};
+                    DefaultTableModel m = (DefaultTableModel) tabla.getModel();
+                    m.addRow(row);
+                    tabla.setModel(m);
+
+                } else if (intermedio >= 1200) {
+
+                    Puntos = Puntos + 10;
+                    System.out.println("sumo10=" + Puntos);
+
+                }
+                if (optimizador < 1200) {
+
+                    System.out.println("Error en Sintactico");
+                    error = "Error en Sintactico";
+                    FaltaEtapa = 1200 - optimizador;
+
+                    Object row[] = {error + FaltaEtapa};
+                    DefaultTableModel m = (DefaultTableModel) tabla.getModel();
+                    m.addRow(row);
+                    tabla.setModel(m);
+
+                } else if (optimizador >= 1200) {
+                    Puntos = Puntos + 5;
+                    System.out.println("sumo(2)15=" + Puntos);
+
+                }
+                if (generador < 500) {
+                    error = "Error en Semantico";
+                    System.out.println("Error en Semantico");
+                    FaltaEtapa = 500 - generador;
+
+                    Object row[] = {error + FaltaEtapa};
+                    DefaultTableModel m = (DefaultTableModel) tabla.getModel();
+                    m.addRow(row);
+                    tabla.setModel(m);
+
+                } else if (generador >= 500) {
+                    Puntos = Puntos + 25;
+                    System.out.println("sumo25=" + Puntos);
+                }
+
+            }
+            FPuntos = Puntos;
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(HiloFaseAnalisis.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        
-        else if (compi.getOptimizador()<1200) {
-            System.out.println("Error en Sintactico");
-            FaltaEtapa5=1200-compi.getOptimizador();
-        }else if (compi.getOptimizador()>=1200) {
-            Puntos=Puntos+5;
-            
-        }else if (compi.getGenerador()<500) {
-            System.out.println("Error en Semantico");
-            FaltaEtapa6=500-compi.getGenerador();
-        }else if (compi.getGenerador()>=500) {
-            Puntos=Puntos+25;
+        System.out.println("Fase Analisis terminada!");
+        System.out.println("Los puntos son:" + (FPuntos - 110));
+        AdministrarUsuarios ua = new AdministrarUsuarios("./UsuariosA.jz");
+        for (int i = 0; i < ua.getListaUsuariosAlumnos().size(); i++) {
+            if (ua.getListaUsuariosAlumnos().get(i).getNombre().equals(nombre)) {
+                ua.getListaUsuariosAlumnos().get(i).setNota(FPuntos);
+            }
         }
-        
-        try {
-            Thread.sleep(5 * 1000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(HiloFaseAnalisis.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        //((DefaultListModel)tabla.getModel()).removeElement(compi.getNombreCreador());
-        
-        //System.out.println("TERMINADO: "+compi.getNombreCreador());
-        
     }
+    
 }
