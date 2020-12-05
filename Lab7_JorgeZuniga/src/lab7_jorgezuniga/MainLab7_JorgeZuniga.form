@@ -239,9 +239,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="login" min="-2" pref="39" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <EmptySpace pref="95" max="32767" attributes="0"/>
                       <Component id="Sigin" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace pref="96" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -741,7 +741,7 @@
                 <Component class="javax.swing.JTable" name="tablaErrores">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="1" rowCount="10">
+                      <Table columnCount="1" rowCount="0">
                         <Column editable="true" title="Errores" type="java.lang.String"/>
                       </Table>
                     </Property>
@@ -778,6 +778,76 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fase Sintesis"/>
               </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="OpcionesUsuario">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="UsuarioLLLLL" min="-2" pref="106" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jButton1" max="32767" attributes="0"/>
+                              <Component id="VerNota" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="120" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="UsuarioLLLLL" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                      <Component id="VerNota" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Crear Compilador"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="VerNota">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver Nota"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="VerNotaMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="UsuarioLLLLL">
             </Component>
           </SubComponents>
         </Container>

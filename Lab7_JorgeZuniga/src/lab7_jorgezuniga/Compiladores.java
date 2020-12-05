@@ -12,7 +12,7 @@ import javax.swing.JTable;
  *
  * @author Alejandro
  */
-public class Compiladores implements Serializable {
+public class Compiladores extends UsuariosAlumnos implements Serializable {
 
     private String nombreCompilador;
     private String nombreCreador;
@@ -115,7 +115,7 @@ public class Compiladores implements Serializable {
 
     @Override
     public String toString() {
-        return "Nombre Compilador=" + nombreCompilador + ", Nombre Creador=" + nombreCreador;
+        return nombreCreador;
     }
 
 }

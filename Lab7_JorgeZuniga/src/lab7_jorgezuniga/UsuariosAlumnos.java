@@ -6,6 +6,7 @@
 package lab7_jorgezuniga;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -74,4 +75,6 @@ public class UsuariosAlumnos implements Serializable{
     public String toString() {
         return "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Usuario=" + Usuario + ", Contrasena=" + Contrasena + ", nota=" + nota;
     }
+
+    
 }

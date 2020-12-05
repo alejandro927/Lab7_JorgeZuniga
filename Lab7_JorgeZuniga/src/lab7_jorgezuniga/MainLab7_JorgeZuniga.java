@@ -99,6 +99,11 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         SalidaCompilar = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        OpcionesUsuario = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        VerNota = new javax.swing.JButton();
+        UsuarioLLLLL = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         MenuSuperUsuario = new javax.swing.JButton();
         Usuarios = new javax.swing.JButton();
@@ -269,9 +274,9 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addComponent(Sigin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addGap(64, 64, 64))
         );
 
         javax.swing.GroupLayout MenuUsuariosLayout = new javax.swing.GroupLayout(MenuUsuarios.getContentPane());
@@ -522,16 +527,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
 
         tablaErrores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null}
+
             },
             new String [] {
                 "Errores"
@@ -633,6 +629,56 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+
+        jButton1.setText("Crear Compilador");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        VerNota.setText("Ver Nota");
+        VerNota.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VerNotaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UsuarioLLLLL, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(VerNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(120, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jButton1)
+                .addGap(47, 47, 47)
+                .addComponent(UsuarioLLLLL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(VerNota)
+                .addGap(73, 73, 73))
+        );
+
+        javax.swing.GroupLayout OpcionesUsuarioLayout = new javax.swing.GroupLayout(OpcionesUsuario.getContentPane());
+        OpcionesUsuario.getContentPane().setLayout(OpcionesUsuarioLayout);
+        OpcionesUsuarioLayout.setHorizontalGroup(
+            OpcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        OpcionesUsuarioLayout.setVerticalGroup(
+            OpcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -769,6 +815,8 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
 
+            AministrarCompiladores ap = new AministrarCompiladores("./Compiladores.jz");
+            ap.cargarArchivo();
             String nombreCompilador, nombreCreador;
             int lexico, sintactico, semantico, intermedio, optimizador, generador;
             JTable tabla;
@@ -783,10 +831,10 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             generador = Integer.parseInt(Generador.getText());
             tabla = (JTable) TablaSimbolos.getCellEditor();
             Compiladores p = new Compiladores(nombreCompilador, nombreCreador, lexico, sintactico, semantico, intermedio, optimizador, generador, tabla);
-            AministrarCompiladores ap = new AministrarCompiladores("./Compiladores.jz");
-            ap.cargarArchivo();
+
             ap.setCompiladores(p);
             ap.escribirArchivo();
+
             JOptionPane.showMessageDialog(this, "Compiladore guardado exitosamente");
             NombreAddCompilador.setText("");
             LineasLexico.setText("");
@@ -845,11 +893,12 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
                 if (UsuarioLog.getText().equals(ap.getListaUsuariosAlumnos().get(i).getUsuario())
                         && ContraLog.getText().equals(ap.getListaUsuariosAlumnos().get(i).getContrasena())) {
 
-                    CrearCompilador.pack();
-                    CrearCompilador.setLocationRelativeTo(null);
-                    CrearCompilador.setVisible(true);
+                    OpcionesUsuario.pack();
+                    OpcionesUsuario.setLocationRelativeTo(null);
+                    OpcionesUsuario.setVisible(true);
                     Log.setVisible(false);
-
+                    UsuarioLLLLL.setText(UsuarioLog.getText());
+                    UsuarioLLLLL.setVisible(false);
                     UsuarioLog.setText("");
                     ContraLog.setText("");
                     nombreAlumno = ap.getListaUsuariosAlumnos().get(i).getNombre();
@@ -950,6 +999,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private void ComilarProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComilarProgramaMouseClicked
         // TODO add your handling code here:
         try {
+            P1.setValue(0);
             AministrarCompiladores ap = new AministrarCompiladores("./Compiladores.jz");
             ap.cargarArchivo();
             int Analisis1;
@@ -958,37 +1008,67 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
             Analisis1 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getLexico();
             Analisis2 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getSintactico();
             Analisis3 = ap.getListaCompiladores().get(ListaAlumnos.getSelectedIndex()).getSemantico();
-
-            HiloFaseAnalisis H1 = new HiloFaseAnalisis(this.P1, true, Analisis1, Analisis2, Analisis3, tablaErrores);
+            this.P1.setMaximum(100*2);
+            HiloFaseAnalisis H1 = new HiloFaseAnalisis(nombre,this.P1, true, Analisis1, Analisis2, Analisis3, this.tablaErrores);
             H1.start();
+            
+            
 
-//            if (P1.getValue() == P1.getMaximum()) {
-//                Compiladores temp = (Compiladores) ListaAlumnos.getSelectedItem();
-//                tablaErrores.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Descripcion", "U.V"
-//                }
-//                ) {
-//                    Class[] types = new Class[]{
-//                        java.lang.String.class, java.lang.String.class
-//                    };
-//                    boolean[] canEdit = new boolean[]{
-//                        false, false
-//                    };
-//
-//                    public Class getColumnClass(int columnIndex) {
-//                        return types[columnIndex];
-//                    }
-//
-//                    public boolean isCellEditable(int rowIndex, int columnIndex) {
-//                        return canEdit[columnIndex];
-//                    }
-//                });
-////                HiloFaseSintesis H2 = new HiloFaseSintesis();
-////                H1.start();
-//            }
+            
+
+            if (P1.getValue() == P1.getMaximum()) {
+                Compiladores temp = (Compiladores) ListaAlumnos.getSelectedItem();
+                tablaErrores.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Descripcion", "U.V"
+                }
+                ) {
+                    Class[] types = new Class[]{
+                        java.lang.String.class, java.lang.String.class
+                    };
+                    boolean[] canEdit = new boolean[]{
+                        false, false
+                    };
+
+                    public Class getColumnClass(int columnIndex) {
+                        return types[columnIndex];
+                    }
+
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit[columnIndex];
+                    }
+                });
+//                HiloFaseSintesis H2 = new HiloFaseSintesis();
+//                H1.start();
+            }
 
         } catch (Exception e) {
         }
     }//GEN-LAST:event_ComilarProgramaMouseClicked
+
+    private void VerNotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerNotaMouseClicked
+        // TODO add your handling code here:
+        try {
+            AdministrarUsuarios ap = new AdministrarUsuarios("./UsuariosA.jz");
+            ap.cargarArchivo();
+            for (int i = 0; i <= ap.getListaUsuariosAlumnos().size()-1; i++) {
+                if (ap.getListaUsuariosAlumnos().get(0).getUsuario().equals(UsuarioLLLLL.getText())) {
+                    JOptionPane.showMessageDialog(null, "Su nota es:"+ap.getListaUsuariosAlumnos().get(0).getNota());
+                }
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_VerNotaMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        try{
+        CrearCompilador.setLocationRelativeTo(null);
+        CrearCompilador.pack();
+        CrearCompilador.setVisible(true);
+        OpcionesUsuario.setVisible(false);
+        
+        }catch(Exception e){
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1049,6 +1129,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private javax.swing.JTextField NombreAddAlumno;
     private javax.swing.JTextField NombreAddCompilador;
     private javax.swing.JTextField NombreCreadorAddCompilador;
+    private javax.swing.JDialog OpcionesUsuario;
     private javax.swing.JTextField Optimizacion;
     private javax.swing.JProgressBar P1;
     private javax.swing.JProgressBar P2;
@@ -1062,8 +1143,11 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private javax.swing.JTextField SuperUsuario;
     private javax.swing.JTable TablaSimbolos;
     private javax.swing.JTextField UsuarioAddAlumno;
+    private javax.swing.JTextField UsuarioLLLLL;
     private javax.swing.JTextField UsuarioLog;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JButton VerNota;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1091,6 +1175,7 @@ public class MainLab7_JorgeZuniga extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
